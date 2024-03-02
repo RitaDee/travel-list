@@ -21,7 +21,12 @@ const App = () => {
 				item.id === id ? { ...item, packed: !item.packed } : item
 			)
 		);
-	};
+  };
+  
+  const handleClearList = () => { 
+    setItems([]);
+  
+  }
 
 	return (
 		<div className="app">
@@ -30,7 +35,8 @@ const App = () => {
 			<PackingList
 				items={items}
 				onDeleteItem={handleDeleteItem}
-				onToggle={handleToggleItem}
+        onToggle={handleToggleItem}
+        onClearList={handleClearList}
 			/>
 			<Stat items={items} />
 		</div>
